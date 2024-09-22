@@ -1,4 +1,4 @@
-// gloval alu
+// gloval value
 let count = 0;
 //calculate button logic:-1
 const calculateButton = document.getElementById("calculate");
@@ -10,6 +10,26 @@ calculateButton.addEventListener('click',function(){
     const software = parseFloat(document.getElementById("software").value);
     const courses = parseFloat(document.getElementById("courses").value);
     const internet = parseFloat(document.getElementById("internet").value);
+
+    // last logic
+    if(income <= 0 || isNaN(income)){
+    document.getElementById("income-error").classList.remove("hidden");
+       return;
+    // errorFun("income-error");
+    }
+    if( software<= 0 || isNaN(software)){
+       document.getElementById("software-error").classList.remove("hidden");
+    // errorFun("software-error")
+       return;
+    }
+    if(courses <= 0 || isNaN(courses)){
+       document.getElementById("courses-error").classList.remove("hidden");
+       return;
+    }
+    if(internet <= 0 || isNaN(internet)){
+       document.getElementById("internet-error").classList.remove("hidden");
+       return;
+    }
     
     /*
     *console.table({income, software, courses, internet});
@@ -17,6 +37,12 @@ calculateButton.addEventListener('click',function(){
     //calculate button logic:-3
     const totalExpanses = software + courses + internet;
     const balance = income - totalExpanses;
+    
+    // last logic
+    if(totalExpanses > income){
+        document.getElementById("logic-error").classList.remove("hidden");
+        return;
+    }
     /*
     *console.table({balance,totalExpanses})
     */
@@ -47,6 +73,9 @@ calculateButton.addEventListener('click',function(){
 
 //calculate savings button logic:-1
 document.getElementById("calculate-savings").addEventListener('click',function(){
+
+    
+
     const savings = parseFloat(document.getElementById("savings").value);
     
     //calculate savings button logic:-2        
@@ -115,6 +144,43 @@ assistantTab.addEventListener('click',function(){
 
 });
 
+
+
+// document.getElementById("income")
+// .addEventListener("input",function(){
+//     const incomeValue = document.getElementById("income").value;
+//     if(isNaN(incomeValue) || incomeValue <= 0){
+//         document.getElementById("income-error").classList.remove("hidden");
+//         return;
+//     }
+// });
+
+// document.getElementById('software')
+// .addEventListener("input",function(){
+//     const softwareValue = document.getElementById("software").value;
+//     if(isNaN(softwareValue) || softwareValue <= 0){
+//         document.getElementById("software-error").classList.remove("hidden");
+//        return;
+//     }
+// });
+
+// document.getElementById("courses")
+// .addEventListener("input",function(){
+//     const coursesValue = document.getElementById("courses").value;
+//     if(isNaN(coursesValue) || coursesValue <= 0){
+//         document.getElementById("courses-error").classList.remove("hidden");
+//        return;
+//     }
+// });
+
+// document.getElementById('internet')
+// .addEventListener("input",function(){
+//     const internetValue = document.getElementById("internet").value;
+//     if(isNaN(internetValue) || internetValue <= 0){
+//         document.getElementById("internet-error").classList.remove("hidden");
+//        return;
+//     }
+// });
 
 
     
