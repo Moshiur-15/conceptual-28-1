@@ -103,29 +103,38 @@ document.getElementById("calculate-savings").addEventListener('click',function()
 /*
 **History button start 
 */
-const assistantTab = document.getElementById("assistant-tab");
+// function
+// historyTab.addEventListener("click",function(){
+//     convert(historyTab,assistantTab)
+// })
 const historyTab = document.getElementById('history-tab');
-historyTab.addEventListener("click",function(){
-    historyTab.classList.add(
-        'text-white', 
-        'bg-gradient-to-r',
-        'from-blue-500',
-        'to-purple-600',
-    )
-    historyTab.classList.remove('text-gray-600')
-    assistantTab.classList.remove(
-        'text-white', 
-        'bg-gradient-to-r',
-        'from-blue-500',
-        'to-purple-600',
-    )
-    assistantTab.classList.add('text-gray-600')
-
-    document.getElementById("expense-form").classList.add("hidden");
-    document.getElementById("history-section").classList.remove("hidden");
-});
-
-
+    historyTab.addEventListener("click",function(){
+        historyTab.classList.add(
+            'text-white', 
+            'bg-gradient-to-r',
+            'from-blue-500',
+            'to-purple-600',
+        )
+        historyTab.classList.remove('text-gray-600')
+        assistantTab.classList.remove(
+            'text-white', 
+            'bg-gradient-to-r',
+            'from-blue-500',
+            'to-purple-600',
+        )
+        assistantTab.classList.add('text-gray-600')
+        
+        document.getElementById("expense-form").classList.add("hidden");
+        document.getElementById("history-section").classList.remove("hidden");
+    });
+    
+    
+    // function
+    // assistantTab.addEventListener('click',function(){
+        //     history(historyTab,assistantTab);
+        // })
+        
+const assistantTab = document.getElementById("assistant-tab");
 assistantTab.addEventListener('click',function(){
     assistantTab.classList.add(
         'text-white', 
